@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Vibes&display=swap');
+
+#wheelOfFortune {
+  display: inline-flex;
+  position: relative;
+}
+
+#wheel {
+  display: block;
+  border: solid white 7px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px -2px black;
+}
+
+.spin {
+  font: 1.5rem/0 sans-serif;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  margin: -15%;
+  background: #fff;
+  color: #fff;
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+.spin::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  border: 10px solid transparent;
+  border-bottom-color: currentColor;
+  border-top: none;
+}
+
+.result {
+  position: absolute;
+}
+
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+.msg {
+  font-family: Tajawal, sans-serif;
+  color: #ef476f;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.msg-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: unset;
+  margin: unset;
+}

@@ -1,0 +1,139 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  /* background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(212,4,107,1) 100%); */
+z-index: 9;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+ 
+  font-family: "exo 2", sans-serif;
+  background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(212,4,107,1) 100%);
+
+
+}
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  /* background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(212,4,107,1) 100%); */
+  /* overflow: hidden; Ensure images don't overflow the container */
+}
+
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  width: 100px;
+  height: 100px;
+
+}
+.backgroundImg1 {
+  position: absolute;
+  top: 250px;
+  left: 60%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(25deg);
+}
+.backgroundImg2 {
+  position: absolute;
+  top: 101px;
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+
+}
+.backgroundImg3 {
+  position: absolute;
+  top: 601px;
+  left:5%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(95deg);
+
+}
+.backgroundImg4 {
+  position: absolute;
+  top: 151px;
+  left: 3%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+
+}
+.backgroundImg5 {
+  position: absolute;
+  top: 520px;
+  left: 60%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+
+}
+
+.container {
+    /* background: white; */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    max-width: 500px;
+    /* width: 100%; */
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: solid 2px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #e40473d9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "exo 2", sans-serif;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #218838;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* .backgroundImg{
+  width: 100px;
+  position: absolute;
+  top: 0;
+  background-repeat: repeat;
+} */
