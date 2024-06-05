@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { environment } from './environment';
 
 function KeywordsManager() {
   const [keywords, setKeywords] = useState({ id: null, keywords: '' });
@@ -12,7 +13,7 @@ function KeywordsManager() {
   useEffect(() => {
     setLoading(true);
     // Fetch keywords
-    axios.get('http://localhost:3000/getKeyword')
+    axios.get(`${environment.apiURL}/getKeyword`)
       .then(response => {
         if (response.data) {
           setUpdate(true);
@@ -26,7 +27,7 @@ function KeywordsManager() {
       });
 
     // Fetch page ID
-    axios.get('http://localhost:3000/getPageId')
+    axios.get(`${environment.apiURL}/getPageId`)
       .then(response => {
         if (response.data) {
           setUpdateId(true);
@@ -44,7 +45,7 @@ function KeywordsManager() {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = update ? `http://localhost:3000/updateKeyword/${keywords.id}` : 'http://localhost:3000/addKeyword';
+      const url = update ? `${environment.apiURL}/updateKeyword/${keywords.id}` : `${environment.apiURL}/addKeyword`;
       const method = update ? 'put' : 'post';
       const response = await axios[method](url, { keywords });
       setKeywords(response.data);
@@ -60,7 +61,7 @@ function KeywordsManager() {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = updateId ? `http://localhost:3000/updatePageId/${pageId.id}` : 'http://localhost:3000/addPageId';
+      const url = updateId ? `${environment.apiURL}/updatePageId/${pageId.id}` : `${environment.apiURL}/addPageId`;
       const method = updateId ? 'put' : 'post';
       const response = await axios[method](url, { pageId });
       setPageId(response.data);

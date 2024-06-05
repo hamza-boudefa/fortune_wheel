@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Fortune.css';
 import img from './sheep.svg';
 import axios from 'axios';
+import { environment } from './environment';
 
 const sectors = [
   { color: '#fff', label: 'عيدك مبروك', font: 'bold 15px Tajawal, sans-serif', fontColor: '#ef476f' },
@@ -79,7 +80,7 @@ const FortuneWheel = ({ userData, onSpinEnd }) => {
         setShowModal(true);
 
         if (result === 'علوش') {
-          axios.post('http://localhost:3000/add_users', {
+          axios.post(`${environment.apiURL}/add_users`, {
             ...userData,
             result,
           })

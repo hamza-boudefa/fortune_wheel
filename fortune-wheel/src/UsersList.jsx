@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './UsersList.css';
+import { environment } from './environment';
 
 
 function UsersList() {
@@ -10,7 +11,7 @@ function UsersList() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/get_users')
+    axios.get(`${environment.apiURL}/get_users`)
       .then(response => {
         setUsers(response.data);
       })

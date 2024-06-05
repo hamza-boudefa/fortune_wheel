@@ -9,9 +9,10 @@ import Form from './Form';
 import UsersList from './UsersList';
 import { Route, Routes } from 'react-router-dom';
 import KeywordsManager from './KeywordsManager';
+import { environment } from './environment';
 
 const instagramClientId = '1467940277144991';
-const redirectUri = 'https://localhost:5173';
+const redirectUri = environment.frontURL;
 
 function App() {
   

@@ -118,9 +118,10 @@ import FacebookLogin from 'react-facebook-login';
 import FortuneWheel from './FortuneWheel';
 import gift from './gift.png';
 import axios from 'axios';
+import { environment } from './environment';
 
 const instagramClientId = '1467940277144991';
-const redirectUri = 'https://localhost:5173';
+const redirectUri = environment.frontURL;
 
 function Form() {
   const [showWheel, setShowWheel] = useState(false);
@@ -133,7 +134,7 @@ const [pageId, setpageId] = useState('')
 console.log(pageId)
   const post=async()=>{
 try {
-    const {data}=  await  axios.get('http://localhost:3000/getKeyword')
+    const {data}=  await  axios.get(`${environment.apiURL}/getKeyword`)
 setPostText(data.keywords)
 } catch (error) {
     console.log(error)
@@ -141,7 +142,7 @@ setPostText(data.keywords)
   }
   const getId=async()=>{
 try {
-    const {data}=  await  axios.get('http://localhost:3000/getPageId')
+    const {data}=  await  axios.get(`${environment.apiURL}/getPageId`)
     setpageId(data.pageId)
 } catch (error) {
     console.log(error)
@@ -163,7 +164,7 @@ try {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     if (referralSource === 'instagram' && code) {
-      fetch(`http://localhost:3000/instagram-token`, {
+      fetch(`${environment.apiURL}/instagram-token`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
